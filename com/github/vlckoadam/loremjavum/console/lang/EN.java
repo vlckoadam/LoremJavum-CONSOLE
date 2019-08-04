@@ -1,4 +1,4 @@
-/*
+//*
     LoremJavum - Random Java Code Generator App Console Interface
     Copyright (C) 2019 Adam Vlčko
 
@@ -23,96 +23,99 @@ import com.github.vlckoadam.loremjavum.core.JavaGeneratorBuilder;
 
 import java.util.UUID;
 
-public class EN implements Lang {
+public class SK implements Lang {
     @Override
     public String intro() {
-        return "~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\n" +
-                "LoremJavum - Random Java Code Generator App\n" +
-                "                 by Adam Vlcko             \n" +
-                "~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\n\n\n" +
-                "Starting in 10 seconds... Please wait!";
+        return "~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~  \n" +
+                "   LoremJavum - Náhodný generátor Java kódu    \n" +
+                "              Autor: Adam Vlčko                \n" +
+                "~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~  \n\n\n" +
+                "Aplikácia bude spustená o 10 sekúnd";
     }
 
     @Override
     public String generatorSessionStarted() {
-        return "New generation session started with id ";
+        return "Relácia generátora začala, id: ";
     }
 
     @Override
     public String requiredInfo() {
-        return "Informations marked with [*] are required.";
+        return "\"Pole\" označené [*] je povinné vyplniť";
     }
+
 
     @Override
     public String setLevelOfMassivity() {
-        return "[*] Please set the level of massivity (how massive will be the generated code) [between 1 and 2^31]:";
+        return "[*] Nastavte level masivity (ako masívne bude vygenerovaný kod) [1 az 2^31]:   ";
     }
 
     @Override
     public String setRootDirectory() {
-        return "[*] Please set root output directory: ";
+        return "[*] Nastavte zdrojový výstupný priečinok: ";
     }
 
     @Override
-    public String setPackage() {
-        return "    Please set package for generated Java classes: (For skip use \"-\")";
+        public String setPackage() {
+        return "    Nastavte package vygenerovaných Java tried: (Ak nechcete package, zadajte \"-\")";
     }
 
     @Override
     public String genParams() {
-        return "    Generate parameters? [y/N]";
+        return "    Generovať parametre? [a/N]";
     }
 
     @Override
     public String genMethodsAndInnerClass() {
-        return "    Generate methods and inner class? [y/N]";
+        return "    Generovať metódy a vložene triedy? [a/N]";
     }
 
     @Override
     public String jdGuiAntiDecompiler() {
-        return "    Add antidecompiling method for jd-gui version 1.4.0? [y/N]";
+        return "    Pridať ochrannú metódu proti dekompilovaniu pomocou jd-gui verzie 1.4.0? [a/N]";
     }
 
     @Override
     public String generating() {
-        return "The code is now being generated, please wait! (Higher the level of massivity is and/or more generated things are activated the more time it will take.)  ";
+        return "Generujem kód, prosím čakajte. (Čím vyšší level masivity a/alebo viac aktivovaných generátorov, tým viac času to bude trvať!)";
+
     }
 
     @Override
     public String finished() {
-        return "Generator finished his job! Stats will appear soon: ";
+        return "Dogenerované! Štatistiky sa objavia čoskoro. ";
     }
 
     @Override
     public String stats(JavaGeneratorBuilder javaGeneratorBuilder, UUID uuid) {
         return "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-             + "                                      ~   S T A T S   ~                 \n\n"
-             + "  - UID: " + uuid.toString() + "\n"
-             + "  - LEVEL: " + javaGeneratorBuilder.level()+"\n\n"
-             + "  - Output directory: " + javaGeneratorBuilder.dir()+"\n"
-             + "  - Package: " + (javaGeneratorBuilder.classPackage().equals("") ? "None" : javaGeneratorBuilder.classPackage())+"\n"
-             + "  - Contains parameters: " + (javaGeneratorBuilder.generateParams()? "YES" : "NO") + "\n"
-             + "  - Contains methods and inner class: "  + (javaGeneratorBuilder.generateMethodsAndInnerClass()? "YES" : "NO") + "\n"
-             + "  - Contains JD GUI version 1.4.0 antidecompiling method: " + (javaGeneratorBuilder.jdGuiAntidecompiler()? "YES" : "NO")+ "\n"
-             + "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\n\n\n";
+                + "                                  ~   Š T A T I S T I K Y   ~                                    \n\n"
+                + "  - Jedinečné ID: " + uuid.toString() +"\n"
+                + "  - LEVEL: " + javaGeneratorBuilder.level()+"\n\n"
+                + "  - Výstupný priečinok: " + javaGeneratorBuilder.dir()+"\n"
+                + "  - Package: " + (javaGeneratorBuilder.classPackage().equals("") ? "Žiaden" : javaGeneratorBuilder.classPackage())+"\n"
+                + "  - Vygenerované parametre: " + (javaGeneratorBuilder.generateParams()? "ÁNO" : "NIE") + "\n"
+                + "  - Vygenerované metódy a vložené triedy: "  + (javaGeneratorBuilder.generateMethodsAndInnerClass()? "ÁNO" : "NIE") + "\n"
+                + "  - Ochrana proti dekompilovaniu pomocou JD-GUI ver. 1.4.0: " + (javaGeneratorBuilder.jdGuiAntidecompiler()? "ÁNO" : "NIE")+ "\n"
+                + "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\n\n\n";
 
     }
 
     @Override
     public String wannaContinue() {
-        return "That's all. Do you want to continue? :) [Y/n]";
+        return "To je všetko. Chcete pokračovať? :) [A/n]";
     }
 
     @Override
     public String thanks() {
-        return "Thanks for using this app. See you soon again. Goodbye!";
+        return "Ďakujem za používanie tejto aplikácie! Dovidenia. ";
     }
 
     @Override
     public String dg() {
         return "//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//\n\n"
-                + "          Copyright.     (c)           A d a m   V l c k o                                   \n"
+                + "          Copyright.     (c)           A d a m   V l č k o                                   \n"
                 + "                                            2 0 1 9                                          \n\n"
                 + "/x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//x//";
     }
+
 }
